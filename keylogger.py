@@ -2,7 +2,7 @@ from pynput import keyboard
 import time
 import re
 import threading
-# import gui
+import gui
 import model as ml
 
 
@@ -49,7 +49,7 @@ def analyser_texte(texte):
         if score_total >= SEUIL_POPUP:
             print("\n!!! ALERTE : Niveau de négativité critique atteint !!!")
             print("Une intervention peut être nécessaire.")
-            # threading.Thread(target=gui.afficher_alert_popup).start()
+            threading.Thread(target=gui.afficher_alert_popup).start()
         
         return True
     return False
